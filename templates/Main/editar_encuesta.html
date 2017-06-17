@@ -1,0 +1,79 @@
+ {% extends "Base/base.html" %}
+ {% load staticfiles %}
+
+
+{% block EstilosCSS %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% static "css/editarEncuesta.css" %}">
+		<style type="text/css">
+	body{ 
+			background: rgb(152, 224, 149) }
+	</style>
+{% endblock EstilosCSS %}
+	
+{% block Contenido %}
+
+<div class="contenedor">
+<form class="form-group" role="form" method="POST" nctype="multipart/form-data" action="/encuesta/guardar">
+{% csrf_token %}
+<div class="caja">
+		<div class="caja1">
+			<h5>Nombre Encuesta:</h5>
+			<input type="text" name="nombreEncuesta" maxlength="50">
+		</div>
+
+		<div class="caja2">
+			<h2>Calcular Muestra</h2>
+			<h4>Tamaño población</h4>
+			<input type="number"  max="5000000" name='inpoblacion' id='inpoblacion'>
+			
+		</div>
+		<div class="caja3">
+			<h4>Nivel de Confianza:</h4>
+			<label for="" name='labconfi'> 95 % </label>
+		</div>
+
+		<div class="caja4">
+			<h4>Tamaño de Muestra</h4>
+			<label for=""> PonerVariable</label>
+			
+			<button type="submit" title="Guardar" class="contact-button" name="btnGuardar">Guardar</button>
+		</div>
+	</div>
+</form>
+</div>
+	<!--REvisar-->
+<div class="contenedor2">
+<form class="form-group" role="form" method="POST" nctype="multipart/form-data" action="/encuesta/guardar">
+	<h4> Nueva Pregunta </h4>
+	<div class="caja5">
+		<h5>Enunciado:</h5>
+		<textarea  name="TextEnunciado" maxlength="150" placeholder="Escribe el enunciado de tu pregunta"></textarea> 
+	</div>
+	<div class="caja6">
+		<div>
+			<h5>Tipo de Respuesta:</h5>
+			<select >
+				<option>Habrá un for aqui</option>
+			</select>
+		</div>
+
+		<div>
+			<h5>Numero de opciones:</h5>
+			<select>
+				<option>Habrá otro for</option>
+			</select>
+		</div>
+
+	</div>
+	<div class="caja7">
+		<h5>¿Guardar  pregunta? Podria ir cancelar</h5>
+			<button title="GuardarPregunta" class="btnGuarPreg">Guardar</button>
+			<button title="EliminarPregunta" class="btnEliPreg">Eliminar</button>		
+	</div>
+</form>
+</div>
+
+
+{% endblock Contenido %}
+

@@ -1,0 +1,76 @@
+{% load staticfiles %}
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Encuesta telef&oacutenica</title>
+	<LINK href="{% static 'css/estilos.css' %}" rel="stylesheet" type="text/css">
+</head>
+<style>
+    #body
+{
+    background:url('{% static 'images/fondo.jpg' %}') no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+}
+
+    #todos      {
+    margin: 0px;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #FFAC33;
+
+    border-style:ridge; 55px;
+    border-color: #FFB065;
+
+    -webkit-box-shadow: -5px 45px 18px -24px rgba(0,0,0,0.43);
+    -moz-box-shadow: -5px 45px 18px -24px rgba(0,0,0,0.43);
+    box-shadow: -5px 45px 18px -24px rgba(0,0,0,0.43);
+     background:url('{% static 'images/orange.jpg' %}');
+     text-align: center;
+    font-family: sans-serif;
+}
+</style>
+<body id="body">
+
+	<form id="todos" method="post" action="{% url "login_view" %}">
+        {% csrf_token %}
+		<h1 >Iniciar sesión como administrador</h1>
+		<input type="text" max-length="20" name="usuario" placeholder="ingrese su usuario"/>
+		<input type="password" max-length="20" name="password" placeholder="ingrese su contraseña"/>
+		<button type="submit" id="botones">Iniciar sesión</button>
+	</form>
+        {% for message in messages %}
+            <h1>{{ message }}</h1>
+        {% endfor %}
+
+<h1 id ="h1">¡Bienvenido al Sistema de encuestas telef&oacutenicas!</h1>
+
+<button type="" id="botones" id="botoncontestar">Contestar Encuesta</button>
+
+<div id="div">
+	<h1><center>Objetivo:</center></h1>
+	<p>este es el objetivo de nuestra app</p>
+</div>
+<div >
+	<div align="right" id="figure"><img src="static/images/tigo.png" width="150" height="150"></div>
+	<div align="right" id="figure"><img src="static/images/claro.png" width="150" height="150"></div>
+	<div align="right" id="figure" style="position:absolute; top:550px; left:1070px; visibility:index:1"><img src="static/images/movistar.png" width="150" height="150"></div>
+	<div align="right" id="figure" style="position:absolute; top:554px; left:859px; visibility:index:1"><img src="static/images/digicel.png" width="179" height="150"></div>
+</div>
+
+
+
+</body>
+
+<footer>
+	<p id="footer">Ciudad Universitaria, 19 de junio 2017</p>
+</footer>
+
+</html>

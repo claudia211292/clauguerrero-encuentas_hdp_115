@@ -1,0 +1,42 @@
+body{ background: rgb(152, 224, 149) }
+.caja1,.caja2,.caja3,.caja4, {
+	width: 300px;
+	height: 130px;
+	background: #4A88F4;
+	color:#fff;
+	float: left;
+	box-shadow: 5px 5px 0px #000000;
+	border: 1px solid #000000;
+	padding: 5px;
+	margin: 5px;
+
+}
+.body{
+	background: #FEF7B5;
+}
+.contenedor {
+	height: 145px;
+	width: 1280px;
+	background: #FEF7B5;
+	bottom: 0px;
+	margin: 0px;
+}
+
+hr {
+	height: 7px;
+	color:#000000;
+	border: 1px solid #ccc;
+}
+
+.contenedor2{
+	background: #FEF7B5;
+	width: 1280px;
+}
+.caja5,.caja6,.caja7 {
+	width: 415px;
+	height: 150px;
+	background:  #4A88F4;
+	float: left;
+	padding: 5px;
+	margin: 5px;
+}
